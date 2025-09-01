@@ -1,34 +1,28 @@
 pipeline {
     agent any
-    stages{
-        stage('Checkout'){
-            steps{
-                git branch: 'master', url: "https://github.com/Divyansh6168/Jenkins-with-github.git"
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/Divyansh6168/Jenkins-with-github.git'
             }
         }
-        
-        stage('Build'){
-            steps{
-                sh 'npm install'
-                sh 'npm run build'
+
+        stage('Build') {
+            steps {
+                echo "Build stage placeholder (no npm project found)"
             }
         }
-        
-        stage('Test'){
-            steps{
-                sh 'npm test'
+
+        stage('Test') {
+            steps {
+                echo "Running tests placeholder"
             }
         }
-        
-        stage('Deploy'){
-            steps{
-                sh '''
-                    git config user.name "Divyansh6168"
-                    git config user.email "divyanshrawat113@gmailcom"
-                    git add -f build
-                    git commit -m "Deploying build to Github pages"
-                    git push origin `git subtree split --prefix build master`:gh-pages --force
-                '''
+
+        stage('Deploy') {
+            steps {
+                echo "Deploy stage placeholder"
             }
         }
     }
