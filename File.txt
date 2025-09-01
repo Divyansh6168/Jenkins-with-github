@@ -1,2 +1,0 @@
-Added a file for testing jenkins webhook.
-Used /github-webook/ after url

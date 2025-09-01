@@ -1,0 +1,14 @@
+Create a Jenkinsfile in the github and write your pipeline code.
+Go to Jenkins, define pipeline script from SCM under definition.
+Use git, enter url and credentials if epo is private.
+Select branch of your choice.
+Script path to Jenkinsfile.
+Save it.
+
+For automating the jenkinsfile to trigger itself with ngrok.
+
+In Jenkins-- Go to configuration and select GitHub hook trigger for GITScm polling.
+In terminal use ngrok http http://localhost:8080 to make a secure connection.
+Open github settings-- webhooks and add a webhook with the given url in nrok
+Use /github-webhook/ after the url, without this the connection will not be made securely.
+NOTE: after every restart you have to update the url of webhook, the link expires after restart.
